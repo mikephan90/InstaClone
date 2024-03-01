@@ -37,6 +37,10 @@
 		B1EFAFA82B92889100A40330 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B1EFAFA72B92889100A40330 /* FirebaseFirestoreSwift */; };
 		B1EFAFAA2B92889100A40330 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B1EFAFA92B92889100A40330 /* FirebaseStorage */; };
 		B1EFAFAC2B9288BA00A40330 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1EFAFAB2B9288BA00A40330 /* GoogleService-Info.plist */; };
+		B1EFAFAF2B928A2800A40330 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFAE2B928A2800A40330 /* AuthService.swift */; };
+		B1EFAFB32B928B4600A40330 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFB22B928B4600A40330 /* ContentViewModel.swift */; };
+		B1EFAFB52B928CBE00A40330 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFB42B928CBE00A40330 /* RegistrationViewModel.swift */; };
+		B1EFAFB72B9291A400A40330 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFB62B9291A400A40330 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +69,10 @@
 		B1EFAF992B92814C00A40330 /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
 		B1EFAF9C2B92847400A40330 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
 		B1EFAFAB2B9288BA00A40330 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B1EFAFAE2B928A2800A40330 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		B1EFAFB22B928B4600A40330 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		B1EFAFB42B928CBE00A40330 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		B1EFAFB62B9291A400A40330 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +117,6 @@
 				B1EFAF612B923A6B00A40330 /* Extension */,
 				B1EFAF602B923A6900A40330 /* Model */,
 				B1EFAF5F2B923A6700A40330 /* Services */,
-				B1EFAF532B923A2400A40330 /* ContentView.swift */,
 				B1EFAF552B923A2600A40330 /* Assets.xcassets */,
 				B1EFAF572B923A2600A40330 /* Preview Content */,
 			);
@@ -184,6 +191,7 @@
 			children = (
 				B1EFAF802B9264FE00A40330 /* View */,
 				B1EFAF812B92650400A40330 /* ViewModel */,
+				B1EFAFAD2B928A1B00A40330 /* Service */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -200,6 +208,8 @@
 		B1EFAF672B923AC100A40330 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				B1EFAFB12B928B3D00A40330 /* View */,
+				B1EFAFB02B928B3500A40330 /* ViewModel */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -303,6 +313,8 @@
 		B1EFAF812B92650400A40330 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B1EFAFB42B928CBE00A40330 /* RegistrationViewModel.swift */,
+				B1EFAFB62B9291A400A40330 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -321,6 +333,30 @@
 				B1EFAF9C2B92847400A40330 /* UploadPostViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B1EFAFAD2B928A1B00A40330 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B1EFAFAE2B928A2800A40330 /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B1EFAFB02B928B3500A40330 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B1EFAFB22B928B4600A40330 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B1EFAFB12B928B3D00A40330 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1EFAF532B923A2400A40330 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,12 +446,16 @@
 				B1EFAF702B92492600A40330 /* ProfileView.swift in Sources */,
 				B1EFAF542B923A2400A40330 /* ContentView.swift in Sources */,
 				B1EFAF832B92650D00A40330 /* LoginView.swift in Sources */,
+				B1EFAFAF2B928A2800A40330 /* AuthService.swift in Sources */,
 				B1EFAF932B9274DA00A40330 /* Post.swift in Sources */,
 				B1EFAF522B923A2400A40330 /* InstaCloneApp.swift in Sources */,
 				B1EFAF852B9269C800A40330 /* AddEmailView.swift in Sources */,
 				B1EFAF912B9272C500A40330 /* CurrentUserProfileView.swift in Sources */,
 				B1EFAF952B9278A800A40330 /* PostGridView.swift in Sources */,
 				B1EFAF892B926C7A00A40330 /* CreateUsernameView.swift in Sources */,
+				B1EFAFB32B928B4600A40330 /* ContentViewModel.swift in Sources */,
+				B1EFAFB72B9291A400A40330 /* LoginViewModel.swift in Sources */,
+				B1EFAFB52B928CBE00A40330 /* RegistrationViewModel.swift in Sources */,
 				B1EFAF9D2B92847400A40330 /* UploadPostViewModel.swift in Sources */,
 				B1EFAF972B927A3300A40330 /* ProfileHeaderView.swift in Sources */,
 				B1EFAF7F2B92635C00A40330 /* SearchView.swift in Sources */,

@@ -28,7 +28,9 @@ struct CurrentUserProfileView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {}, label: {
+                    Button(action: {
+                        AuthService.shared.signout()
+                    }, label: {
                         Image(systemName: "line.3.horizontal")
                             .foregroundStyle(Color.black)
                     })
