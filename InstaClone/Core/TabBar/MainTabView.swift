@@ -14,13 +14,13 @@ struct MainTabView: View {
     var body: some View {
         TabView(selection: $selectedTab,
                 content:  {
-            Text("Feed")
+            FeedView()
                 .tabItem {
                     Image(systemName: "house")
                 }
                 .tag(0)
             
-            Text("Search")
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
