@@ -1,0 +1,62 @@
+//
+//  CreatePasswordView.swift
+//  InstaClone
+//
+//  Created by Mike Phan on 3/1/24.
+//
+
+import SwiftUI
+
+struct CreatePasswordView: View {
+    
+    @State private var password = ""
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        VStack(spacing: 12, content: {
+            
+            // TODO: Create resuable view here
+            Text("Create password")
+                .font(.title2)
+                .fontWeight(.bold)
+                .padding(.top)
+            
+            Text("Your password must be at least 6 characters in length.")
+                .font(.footnote)
+                .foregroundStyle(Color.gray)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 24)
+            
+            TextField("Password", text: $password)
+                .modifier(IGTextFieldModifier())
+                .autocapitalization(.none)
+                .padding(.top)
+            
+            NavigationLink(destination: CompleteSignupView().navigationBarBackButtonHidden()) {
+                Text("Next")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(Color.white)
+                    .frame(width: 360, height: 44)
+                    .background(Color.blue)
+                    .cornerRadius(8)
+            }
+            .padding(.vertical)
+            
+            Spacer()
+        })
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                    .onTapGesture {
+                        dismiss()
+                    }
+            }
+        }
+    }
+}
+
+#Preview {
+    CreatePasswordView()
+}
