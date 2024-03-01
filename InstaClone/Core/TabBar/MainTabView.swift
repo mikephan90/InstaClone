@@ -15,30 +15,45 @@ struct MainTabView: View {
         TabView(selection: $selectedTab,
                 content:  {
             FeedView()
+                .onAppear{
+                    selectedTab = 0
+                }
                 .tabItem {
                     Image(systemName: "house")
                 }
                 .tag(0)
             
             SearchView()
+                .onAppear{
+                    selectedTab = 1
+                }
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
                 .tag(1)
             
-            Text("Upload Post")
+            UploadPostView(tabIndex: $selectedTab)
+                .onAppear{
+                    selectedTab = 2
+                }
                 .tabItem {
                     Image(systemName: "plus.square")
                 }
                 .tag(2)
             
             Text("Notifications")
+                .onAppear{
+                    selectedTab = 3
+                }
                 .tabItem {
                     Image(systemName: "heart")
                 }
                 .tag(3)
             
-            ProfileView()
+            CurrentUserProfileView(user: User.MOCK_USERS[0])
+                .onAppear{
+                    selectedTab = 4
+                }
                 .tabItem {
                     Image(systemName: "person")
                 }

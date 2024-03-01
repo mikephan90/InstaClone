@@ -29,19 +29,17 @@ struct CompleteSignupView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
-            Button(action: {
+            Button("Complete Sign Up") {
                 print("complete sign up")
-            }, label: {
-                Text("Complete Sign Up")
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(Color.white)
-                    .frame(width: 360, height: 44)
-                    .background(Color.blue)
-                    .cornerRadius(8)
-            })
+            }         
+            .font(.subheadline)
+            .fontWeight(.semibold)
+            .foregroundStyle(Color.white)
+            .frame(width: 360, height: 44)
+            .background(Color.blue)
+            .cornerRadius(8)
             .padding(.vertical)
-            
+
             Spacer()
         })
         .toolbar {

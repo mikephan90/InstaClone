@@ -38,12 +38,16 @@ struct SearchView: View {
                                 Spacer()
                             }
                             .padding(.horizontal)
+                            .foregroundStyle(Color.black)
                         }
                     }
                 }
                 .padding(.top, 8)
                 .searchable(text: $searchText, prompt: "Search...")
             }
+            .navigationDestination(for: User.self, destination: { user in
+                ProfileView(user: user)
+            })
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)
         }

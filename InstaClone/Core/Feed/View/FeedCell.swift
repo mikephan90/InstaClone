@@ -8,24 +8,29 @@
 import SwiftUI
 
 struct FeedCell: View {
+    
+    let post: Post
+    
     var body: some View {
         VStack {
             HStack {
-                Image("ironman2")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 40, height: 40)
-                    .clipShape(.circle)
-                
-                Text("ironman1")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
-                
+                if let user = post.user {
+                    Image(user.profileImageUrl ?? "")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipShape(.circle)
+                    
+                    Text(user.username)
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                }
+               
                 Spacer()
             }
             .padding(.leading, 8)
             
-            Image("ironman1")
+            Image(post.imageUrl)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 400, height: 400) // use actual height of image
@@ -55,7 +60,7 @@ struct FeedCell: View {
             .padding(.top, 4)
             .foregroundStyle(Color.black)
             
-            Text("23 likes")
+            Text("\(post.likes) likes")
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -63,9 +68,9 @@ struct FeedCell: View {
                 .padding(.top, 1)
             
             HStack {
-                Text("ironman1 ")
+                Text("\(post.user?.username ?? "") ")
                     .fontWeight(.semibold) +
-                Text("I am Iron Man")
+                Text(post.caption)
             }
             .font(.footnote)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -83,5 +88,5 @@ struct FeedCell: View {
 }
 
 #Preview {
-    FeedCell()
+    FeedCell(post: Post.MOCK_POST[2])
 }

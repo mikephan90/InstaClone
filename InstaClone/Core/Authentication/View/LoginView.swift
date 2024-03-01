@@ -31,28 +31,24 @@ struct LoginView: View {
                         .modifier(IGTextFieldModifier())
                 }
                 
-                Button(action: {
+                Button("Forgot Password?") {
                     print("forgot password")
-                }, label: {
-                    Text("Forgot Password?")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                        .padding(.top)
-                        .padding(.trailing, 28)
-                })
+                }
+                .font(.footnote)
+                .fontWeight(.semibold)
+                .padding(.top)
+                .padding(.trailing, 28)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 
-                Button(action: {
+                Button("Log In") {
                     print("login")
-                }, label: {
-                    Text("Log In")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(Color.white)
-                        .frame(width: 360, height: 44)
-                        .background(Color.blue)
-                        .cornerRadius(8)
-                })
+                }
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .foregroundStyle(Color.white)
+                .frame(width: 360, height: 44)
+                .background(Color.blue)
+                .cornerRadius(8)
                 .padding(.vertical)
                 
                 HStack {
