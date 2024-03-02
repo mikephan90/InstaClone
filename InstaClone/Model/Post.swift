@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct Post: Identifiable, Codable, Hashable {
     let id: String
@@ -13,7 +14,7 @@ struct Post: Identifiable, Codable, Hashable {
     let caption: String
     var likes: Int
     let imageUrl: String
-    let timestamp: Date
+    let timestamp: Timestamp
     var user: User?
 }
 
@@ -25,7 +26,7 @@ extension Post {
             caption: "This is some test caption for now here it is",
             likes: 12232,
             imageUrl: "ironman2",
-            timestamp: Date(),
+            timestamp: Timestamp(),
             user: User.MOCK_USERS[0]
         ),
         
@@ -35,7 +36,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 432,
                 imageUrl: "spiderman3",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[3]
             ),
         
@@ -45,7 +46,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 43223,
                 imageUrl: "thor2",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[6]
             ),
         
@@ -55,7 +56,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 43,
                 imageUrl: "ironman6",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[0]
             ),
         
@@ -65,7 +66,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 432,
                 imageUrl: "hulk1",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[1]
             ),
         
@@ -75,7 +76,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 333,
                 imageUrl: "captainamerica3",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[5]
             ),
         
@@ -85,7 +86,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 232,
                 imageUrl: "blackwidow1",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[4]
             ),
         
@@ -95,7 +96,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 432,
                 imageUrl: "spiderman1",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[3]
             ),
         
@@ -105,7 +106,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 232,
                 imageUrl: "blackpanther1",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[2]
             ),
         
@@ -115,7 +116,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 333,
                 imageUrl: "captainamerica2",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[5]
             ),
         
@@ -125,7 +126,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 43223,
                 imageUrl: "thor1",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[6]
             ),
         
@@ -135,7 +136,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 44233,
                 imageUrl: "ironman4",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[0]
             ),
         
@@ -145,7 +146,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 41113,
                 imageUrl: "ironman5",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[0]
             ),
         
@@ -155,7 +156,7 @@ extension Post {
                 caption: "This is some test caption for now here it is",
                 likes: 333,
                 imageUrl: "captainamerica1",
-                timestamp: Date(),
+                timestamp: Timestamp(),
                 user: User.MOCK_USERS[5]
             ),
     ]
