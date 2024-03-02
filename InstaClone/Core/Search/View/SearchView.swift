@@ -20,12 +20,7 @@ struct SearchView: View {
                         // Since we are selecting an object, we pass a user
                         NavigationLink(value: user) {
                             HStack {
-                                Image(systemName: "person.circle")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .foregroundStyle(Color.gray)
-                                    .frame(width: 40, height: 40)
-                                .clipShape(.circle)
+                                CircularProfileImageView(user: user, size: .xsmall)
                                 
                                 VStack(alignment: .leading, content: {
                                     Text(user.username)

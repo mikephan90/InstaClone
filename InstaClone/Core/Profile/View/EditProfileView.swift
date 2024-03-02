@@ -56,19 +56,14 @@ struct EditProfileView: View {
                     if let image = viewModel.profileImage {
                         image
                             .resizable()
+                            .scaledToFill()
                             .foregroundStyle(Color.white)
                             .background(.gray)
                             .clipShape(.circle)
                             .frame(width: 80, height: 80)
                             .padding(.top, 8)
                     } else {
-                        Image(systemName: "person")
-                            .resizable()
-                            .foregroundStyle(Color.white)
-                            .background(.gray)
-                            .clipShape(.circle)
-                            .frame(width: 80, height: 80)
-                            .padding(.top, 8)
+                        CircularProfileImageView(user: viewModel.user, size: .large)
                     }
                     
                     Text("Edit profile pic")
@@ -81,8 +76,6 @@ struct EditProfileView: View {
             }
             
             VStack(spacing: 8, content: {
-//                if let currentName =
-                
                 EditProfileRowView(title: "Name", placeholder: "Enter your name..", text: $viewModel.fullname)
                 EditProfileRowView(title: "Bio", placeholder: "Enter your bio...", text: $viewModel.bio)
                 Spacer()

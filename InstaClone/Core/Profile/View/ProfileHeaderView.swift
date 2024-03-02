@@ -15,20 +15,7 @@ struct ProfileHeaderView: View {
     var body: some View {
         VStack(spacing: 10, content: {
             HStack {
-                
-                if let userProfileImage = user.profileImageUrl {
-                    Image(user.profileImageUrl ?? "")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 80, height: 80)
-                        .clipShape(.circle)
-                } else {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 80, height: 80)
-                        .clipShape(.circle)
-                }
+                CircularProfileImageView(user: user, size: .large)
                
                 Spacer()
                 

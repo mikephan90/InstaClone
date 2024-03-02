@@ -25,18 +25,18 @@ struct User: Identifiable, Codable, Hashable {
 
 extension User {
     static var MOCK_USERS: [User] = [
-        .init(id: NSUUID().uuidString, username: "ironman1", profileImageUrl: "ironman2", fullname: "Tony Stark", bio: "Your billionare, playboy, philantrophist", email: "ironman@iam.com"),
+        .init(id: NSUUID().uuidString, username: "ironman1", profileImageUrl: nil, fullname: "Tony Stark", bio: "Your billionare, playboy, philantrophist", email: "ironman@iam.com"),
         
-            .init(id: NSUUID().uuidString, username: "hulk1", profileImageUrl: "hulk1", fullname: "Bruce Banner", bio: "Big green mean machine", email: "hulk@iam.com"),
+            .init(id: NSUUID().uuidString, username: "hulk1", profileImageUrl: nil, fullname: "Bruce Banner", bio: "Big green mean machine", email: "hulk@iam.com"),
         
-            .init(id: NSUUID().uuidString, username: "blackpanther1", profileImageUrl: "blackpanther1", fullname: "Tchalla", bio: "Wakanda Forever", email: "blackpanther@iam.com"),
+            .init(id: NSUUID().uuidString, username: "blackpanther1", profileImageUrl: nil, fullname: "Tchalla", bio: "Wakanda Forever", email: "blackpanther@iam.com"),
         
-            .init(id: NSUUID().uuidString, username: "spiderman1", profileImageUrl: "spiderman1", fullname: "Peter Parker", bio: "Friendly neighborhood spiderman", email: "spidey@iam.com"),
+            .init(id: NSUUID().uuidString, username: "spiderman1", profileImageUrl: nil, fullname: "Peter Parker", bio: "Friendly neighborhood spiderman", email: "spidey@iam.com"),
         
-            .init(id: NSUUID().uuidString, username: "blackwidow1", profileImageUrl: "blackwidow1", fullname: "Natasha Romanoff", bio: "Black black sneaky sneak", email: "bw@iam.com"),
+            .init(id: NSUUID().uuidString, username: "blackwidow1", profileImageUrl: nil, fullname: "Natasha Romanoff", bio: "Black black sneaky sneak", email: "bw@iam.com"),
         
-            .init(id: NSUUID().uuidString, username: "captainamerica1", profileImageUrl: "captainamerica1", fullname: "Steve Rogers", bio: "I am the captain", email: "ca@iam.com"),
+            .init(id: NSUUID().uuidString, username: "captainamerica1", profileImageUrl: nil, fullname: "Steve Rogers", bio: "I am the captain", email: "ca@iam.com"),
         
-            .init(id: NSUUID().uuidString, username: "thor1", profileImageUrl: "thor1", fullname: "Thor Odinson", bio: "Asgard is my home", email: "thor@iam.com")
+            .init(id: NSUUID().uuidString, username: "thor1", profileImageUrl: nil, fullname: "Thor Odinson", bio: "Asgard is my home", email: "thor@iam.com")
     ]
 }
