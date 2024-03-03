@@ -88,3 +88,36 @@ extension UserService {
     }
     
 }
+
+// MARK: - User Stats
+
+extension UserService {
+    
+    static func fetchUserStats(uid: String) async throws -> UserStats {
+        // Async calls
+        async let followingCount = FirebaseConstants.FollowingCollection
+            .document(uid)
+            .collection("user-following")
+            .getDocuments()
+            .count
+        
+        async let followerCount = FirebaseConstants.FollowersCollection
+            .document(uid)
+            .collection("user-followers")
+            .getDocuments()
+            .count
+
+        async let postCount = FirebaseConstants.PostsCollection
+            .whereField("ownerUid", isEqualTo: uid)
+            .getDocuments()
+            .count
+        
+        // Await here as all values will need to be ultimately returned
+        return try await .init(
+            followingCount: followingCount,
+            followersCount: followerCount,
+            postsCount: postCount
+        )
+    }
+    
+}

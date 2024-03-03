@@ -12,6 +12,7 @@
 		B1D769082B94443000C8FA8E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B1D769072B94443000C8FA8E /* .gitignore */; };
 		B1D7690C2B9444B000C8FA8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1D7690B2B9444B000C8FA8E /* GoogleService-Info.plist */; };
 		B1D769132B94ECA100C8FA8E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D769122B94ECA100C8FA8E /* ProfileViewModel.swift */; };
+		B1D769152B94F6F000C8FA8E /* UserListConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D769142B94F6F000C8FA8E /* UserListConfig.swift */; };
 		B1EFAF522B923A2400A40330 /* InstaCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAF512B923A2400A40330 /* InstaCloneApp.swift */; };
 		B1EFAF542B923A2400A40330 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAF532B923A2400A40330 /* ContentView.swift */; };
 		B1EFAF562B923A2600A40330 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EFAF552B923A2600A40330 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		B1D769072B94443000C8FA8E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B1D7690B2B9444B000C8FA8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1D769122B94ECA100C8FA8E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		B1D769142B94F6F000C8FA8E /* UserListConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListConfig.swift; sourceTree = "<group>"; };
 		B1EFAF4E2B923A2400A40330 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EFAF512B923A2400A40330 /* InstaCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCloneApp.swift; sourceTree = "<group>"; };
 		B1EFAF532B923A2400A40330 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -163,7 +165,6 @@
 		B1EFAF502B923A2400A40330 /* InstaClone */ = {
 			isa = PBXGroup;
 			children = (
-				B1D7690B2B9444B000C8FA8E /* GoogleService-Info.plist */,
 				B1EFAF632B923A6E00A40330 /* App */,
 				B1EFAF622B923A6C00A40330 /* Core */,
 				B1EFAF612B923A6B00A40330 /* Extension */,
@@ -173,6 +174,7 @@
 				B1EFAF552B923A2600A40330 /* Assets.xcassets */,
 				B1EFAF572B923A2600A40330 /* Preview Content */,
 				B1D769072B94443000C8FA8E /* .gitignore */,
+				B1D7690B2B9444B000C8FA8E /* GoogleService-Info.plist */,
 			);
 			path = InstaClone;
 			sourceTree = "<group>";
@@ -200,6 +202,7 @@
 			children = (
 				B1EFAF8E2B926F5C00A40330 /* User.swift */,
 				B1EFAF922B9274DA00A40330 /* Post.swift */,
+				B1D769142B94F6F000C8FA8E /* UserListConfig.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				B1EFAF972B927A3300A40330 /* ProfileHeaderView.swift in Sources */,
 				B1EFAF7F2B92635C00A40330 /* SearchView.swift in Sources */,
 				B1EFAFC12B93B12D00A40330 /* EditProfileRowView.swift in Sources */,
+				B1D769152B94F6F000C8FA8E /* UserListConfig.swift in Sources */,
 				B1EFAF8F2B926F5C00A40330 /* User.swift in Sources */,
 				B1EFAFD02B93CDFD00A40330 /* PostService.swift in Sources */,
 				B1EFAF872B926BE000A40330 /* IGTextFieldModifier.swift in Sources */,

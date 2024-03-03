@@ -18,12 +18,19 @@ struct User: Identifiable, Codable, Hashable {
     
     // Add default here as it is unique to each individual user
     var isFollowed: Bool? = false
+    var stats: UserStats?
     
     // Look at the current user if there is one
     var isCurrentUser : Bool {
         guard let currentUid = Auth.auth().currentUser?.uid else { return false }
         return currentUid == id
     }
+}
+
+struct UserStats: Codable, Hashable {
+    var followingCount: Int
+    var followersCount: Int
+    var postsCount: Int
 }
 
 extension User {

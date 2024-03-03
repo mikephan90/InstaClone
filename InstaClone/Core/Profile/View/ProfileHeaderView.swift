@@ -23,6 +23,10 @@ struct ProfileHeaderView: View {
         return user.isFollowed ?? false
     }
     
+    private var stats: UserStats {
+        return user.stats ?? .init(followingCount: 0, followersCount: 0, postsCount: 0)
+    }
+    
     private var buttonTitle: String {
         if user.isCurrentUser {
             return "Edit Profile"
@@ -67,9 +71,17 @@ struct ProfileHeaderView: View {
                 Spacer()
                 
                 HStack(spacing: 8, content: {
-                    UserStatView(value: 3, title: "Posts")
-                    UserStatView(value: 12, title: "Followers")
-                    UserStatView(value: 19, title: "Following")
+                    UserStatView(value: stats.postsCount, title: "Posts")
+                    
+                    // This NavLink is for enum cases/data type
+                    NavigationLink(value: UserListConfig.followers(uid: user.id)) {
+                        UserStatView(value: stats.followersCount, title: "Followers")
+                    }
+                    .disabled(stats.followersCount == 0)
+                   
+                    NavigationLink(value: UserListConfig.following(uid: user.id)) {
+                        UserStatView(value: stats.followingCount, title: "Following")
+                    }
                 })
             }
             .padding(.horizontal)
@@ -110,6 +122,13 @@ struct ProfileHeaderView: View {
             
             Divider()
         })
+        .navigationDestination(for: UserListConfig.self, destination: { config in
+            Text(config.navigationTitle)
+        })
+        .onAppear {
+            viewModel.fetchUserStats()
+            viewModel.checkIfUserIsFollowed()
+        }
         .fullScreenCover(isPresented: $showEditProfile, content: {
             EditProfileView(user: user)
         })
