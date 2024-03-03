@@ -22,8 +22,6 @@ struct ProfileView: View {
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView(user: User.MOCK_USERS[5])
-    }
+#Preview {
+    ProfileView(user: User.MOCK_USERS[5])
 }

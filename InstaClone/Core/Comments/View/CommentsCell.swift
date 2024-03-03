@@ -25,7 +25,7 @@ struct CommentsCell: View {
                     Text(user?.username ?? "")
                         .fontWeight(.semibold)
                     Text(comment.timestamp.timestampString())
-                        .foregroundStyle(Color.gray)
+                        .foregroundStyle(.gray)
                 })
                 
                 Text(comment.commentText)
@@ -38,8 +38,6 @@ struct CommentsCell: View {
     }
 }
 
-struct CommentCell_Previews: PreviewProvider {
-    static var previews: some View {
-        CommentsCell(comment: dev.comment)
-    }
+#Preview {
+    CommentsCell(comment: DeveloperPreview.shared.comment)
 }

@@ -57,7 +57,7 @@ struct EditProfileView: View {
                         image
                             .resizable()
                             .scaledToFill()
-                            .foregroundStyle(Color.white)
+                            .foregroundStyle(.white)
                             .background(.gray)
                             .clipShape(.circle)
                             .frame(width: 80, height: 80)

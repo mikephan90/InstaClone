@@ -25,5 +25,13 @@ class DeveloperPreview {
         commentOwnerUid: "198273981"
     )
     
-    
+    let notifications: [Notification] = [
+        .init(id: NSUUID().uuidString, timestamp: Timestamp(), notificationSenderUid: "123", type: .like),
+        .init(id: NSUUID().uuidString, timestamp: Timestamp(), notificationSenderUid: "234", type: .comment),
+        .init(id: NSUUID().uuidString, timestamp: Timestamp(), notificationSenderUid: "453", type: .follow),
+        .init(id: NSUUID().uuidString, timestamp: Timestamp(), notificationSenderUid: "543", type: .like),
+        .init(id: NSUUID().uuidString, timestamp: Timestamp(), notificationSenderUid: "123", type: .like),
+        .init(id: NSUUID().uuidString, timestamp: Timestamp(), notificationSenderUid: "234", type: .follow),
+        .init(id: NSUUID().uuidString, timestamp: Timestamp(), notificationSenderUid: "665", type: .comment)
+    ]
 }

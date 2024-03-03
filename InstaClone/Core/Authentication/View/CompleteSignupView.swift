@@ -34,9 +34,9 @@ struct CompleteSignupView: View {
             }
             .font(.subheadline)
             .fontWeight(.semibold)
-            .foregroundStyle(Color.white)
+            .foregroundStyle(.white)
             .frame(width: 360, height: 44)
-            .background(Color.blue)
+            .background(.blue)
             .cornerRadius(8)
             .padding(.vertical)
 

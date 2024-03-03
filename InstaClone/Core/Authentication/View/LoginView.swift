@@ -44,9 +44,9 @@ struct LoginView: View {
                 }
                 .font(.subheadline)
                 .fontWeight(.semibold)
-                .foregroundStyle(Color.white)
+                .foregroundStyle(.white)
                 .frame(width: 360, height: 44)
-                .background(Color.blue)
+                .background(.blue)
                 .cornerRadius(8)
                 .padding(.vertical)
                 
@@ -61,7 +61,7 @@ struct LoginView: View {
                     Rectangle()
                         .frame(width: (UIScreen.main.bounds.width / 2) - 40, height: 0.5)
                 }
-                .foregroundStyle(Color.gray)
+                .foregroundStyle(.gray)
                 
                 HStack {
                     Image("facebook-logo")
@@ -71,7 +71,7 @@ struct LoginView: View {
                     Text("Continue with Facebook")
                         .font(.footnote)
                         .fontWeight(.semibold)
-                        .foregroundStyle(Color.blue)
+                        .foregroundStyle(.blue)
                         .padding(.top, 8)
                 }
                 

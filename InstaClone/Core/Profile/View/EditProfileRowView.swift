@@ -28,9 +28,9 @@ struct EditProfileRowView: View {
     }
 }
 
-struct EditProfileView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
+    @State static var tempText = "temp text"
     static var previews: some View {
-        @State var tempText = "temp text"
         EditProfileRowView(title: "Test", placeholder: "temp placeholder", text: $tempText)
     }
 }

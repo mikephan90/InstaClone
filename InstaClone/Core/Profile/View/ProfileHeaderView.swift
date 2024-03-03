@@ -82,6 +82,7 @@ struct ProfileHeaderView: View {
                     NavigationLink(value: UserListConfig.following(uid: user.id)) {
                         UserStatView(value: stats.followingCount, title: "Following")
                     }
+                    .disabled(stats.followingCount == 0)
                 })
             }
             .padding(.horizontal)
@@ -123,7 +124,7 @@ struct ProfileHeaderView: View {
             Divider()
         })
         .navigationDestination(for: UserListConfig.self, destination: { config in
-            Text(config.navigationTitle)
+            UserListView(config: config)
         })
         .onAppear {
             viewModel.fetchUserStats()

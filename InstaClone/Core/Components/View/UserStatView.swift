@@ -30,8 +30,6 @@ struct UserStatView: View {
     }
 }
 
-struct UserStateView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserStatView(value: 12, title: "Posts")
-    }
+#Preview {
+    UserStatView(value: 12, title: "Posts")
 }

@@ -14,39 +14,12 @@ struct SearchView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVStack(spacing: 12) {
-                    ForEach(viewModel.users) { user in
-                        // Since we are selecting an object, we pass a user
-                        NavigationLink(value: user) {
-                            HStack {
-                                CircularProfileImageView(user: user, size: .xsmall)
-                                
-                                VStack(alignment: .leading, content: {
-                                    Text(user.username)
-                                        .fontWeight(.semibold)
-                                    
-                                    if let fullname = user.fullname {
-                                        Text(fullname)
-                                    }
-                                })
-                                .font(.footnote)
-                                
-                                Spacer()
-                            }
-                            .padding(.horizontal)
-                            .foregroundStyle(Color.black)
-                        }
-                    }
-                }
-                .padding(.top, 8)
-                .searchable(text: $searchText, prompt: "Search...")
-            }
-            .navigationDestination(for: User.self, destination: { user in
-                ProfileView(user: user)
-            })
-            .navigationTitle("Explore")
-            .navigationBarTitleDisplayMode(.inline)
+            UserListView(config: .explore)
+                .navigationDestination(for: User.self, destination: { user in
+                    ProfileView(user: user)
+                })
+                .navigationTitle("Explore")
+                .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

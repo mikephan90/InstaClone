@@ -23,7 +23,7 @@ struct CreatePasswordView: View {
             
             Text("Your password must be at least 6 characters in length.")
                 .font(.footnote)
-                .foregroundStyle(Color.gray)
+                .foregroundStyle(.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
@@ -36,9 +36,9 @@ struct CreatePasswordView: View {
                 Text("Next")
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                    .foregroundStyle(Color.white)
+                    .foregroundStyle(.white)
                     .frame(width: 360, height: 44)
-                    .background(Color.blue)
+                    .background(.blue)
                     .cornerRadius(8)
             }
             .padding(.vertical)

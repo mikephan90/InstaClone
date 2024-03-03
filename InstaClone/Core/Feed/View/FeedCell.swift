@@ -80,7 +80,7 @@ struct FeedCell: View {
             })
             .padding(.horizontal, 8)
             .padding(.top, 4)
-            .foregroundStyle(Color.black)
+            .foregroundStyle(.black)
             
             if post.likes > 0 {
                 Text("\(post.likes) likes")
@@ -108,7 +108,7 @@ struct FeedCell: View {
                     Text("View all \(commentCount) comments")
                         .font(.footnote)
                         .fontWeight(.light)
-                        .foregroundStyle(Color.gray)
+                        .foregroundStyle(.gray)
                     Spacer()
                 })
                 .padding(.leading, 10)
@@ -120,7 +120,7 @@ struct FeedCell: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 10)
                 .padding(.top, 1)
-                .foregroundStyle(Color.gray)
+                .foregroundStyle(.gray)
         }
         .sheet(isPresented: $showComments, content: {
             CommentsView(post: post)

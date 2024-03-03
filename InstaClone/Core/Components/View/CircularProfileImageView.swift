@@ -45,7 +45,7 @@ struct CircularProfileImageView: View {
                 .resizable()
                 .frame(width: size.dimension, height: size.dimension)
                 .clipShape(.circle)
-                .foregroundStyle(Color.gray)
+                .foregroundStyle(.gray)
         }
     }
 }

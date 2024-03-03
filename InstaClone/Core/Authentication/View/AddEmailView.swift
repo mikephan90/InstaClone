@@ -21,7 +21,7 @@ struct AddEmailView: View {
             
             Text("You'll use this email to sign in to your account")
                 .font(.footnote)
-                .foregroundStyle(Color.gray)
+                .foregroundStyle(.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
@@ -35,9 +35,9 @@ struct AddEmailView: View {
                 Text("Next")
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                    .foregroundStyle(Color.white)
+                    .foregroundStyle(.white)
                     .frame(width: 360, height: 44)
-                    .background(Color.blue)
+                    .background(.blue)
                     .cornerRadius(8)
             }
             .padding(.vertical)
