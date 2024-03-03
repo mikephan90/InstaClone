@@ -21,6 +21,10 @@ struct FeedCell: View {
         return post.didLike ?? false
     }
     
+    private var commentCount: Int {
+        return viewModel.commentsCount ?? 0
+    }
+    
     init(post: Post) {
         self.viewModel = FeedCellViewModel(post: post)
     }
@@ -35,7 +39,7 @@ struct FeedCell: View {
                         .font(.footnote)
                         .fontWeight(.semibold)
                 }
-               
+                
                 Spacer()
             }
             .padding(.leading, 8)
@@ -67,8 +71,14 @@ struct FeedCell: View {
                     Image(systemName: "paperplane")
                 })
                 Spacer()
+                
+                Button(action: {
+                    print("save post")
+                }, label: {
+                    Image(systemName: "bookmark")
+                })
             })
-            .padding(.leading, 8)
+            .padding(.horizontal, 8)
             .padding(.top, 4)
             .foregroundStyle(Color.black)
             
@@ -91,7 +101,21 @@ struct FeedCell: View {
             .padding(.leading, 10)
             .padding(.top, 1)
             
-            Text(post.timestamp.timestampString())
+            if commentCount > 0 {
+                Button(action: {
+                    showComments.toggle()
+                }, label: {
+                    Text("View all \(commentCount) comments")
+                        .font(.footnote)
+                        .fontWeight(.light)
+                        .foregroundStyle(Color.gray)
+                    Spacer()
+                })
+                .padding(.leading, 10)
+                .padding(.top, 4)
+            }
+            
+            Text(post.timestamp.timestampString() + " ago")
                 .font(.footnote)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 10)

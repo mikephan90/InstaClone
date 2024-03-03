@@ -41,7 +41,7 @@ struct CommentsView: View {
             Divider()
             
             HStack(spacing: 12, content: {
-                var commentIsEmpty = commentText == ""
+                let commentIsEmpty = commentText == ""
                 
                 CircularProfileImageView(user: currentUser, size: .xsmall)
                 
