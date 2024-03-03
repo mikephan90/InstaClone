@@ -53,6 +53,10 @@
 		B1EFAFD02B93CDFD00A40330 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFCF2B93CDFD00A40330 /* PostService.swift */; };
 		B1EFAFD42B93CF7F00A40330 /* PostGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFD32B93CF7F00A40330 /* PostGridViewModel.swift */; };
 		B1EFAFD62B93D2D800A40330 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFD52B93D2D800A40330 /* FeedCellViewModel.swift */; };
+		B1EFAFDD2B942FC800A40330 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFDC2B942FC800A40330 /* CommentsView.swift */; };
+		B1EFAFDF2B942FD200A40330 /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFDE2B942FD200A40330 /* CommentsCell.swift */; };
+		B1EFAFE12B9433B500A40330 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFE02B9433B500A40330 /* CommentsViewModel.swift */; };
+		B1EFAFE32B9433C400A40330 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFE22B9433C400A40330 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +100,10 @@
 		B1EFAFCF2B93CDFD00A40330 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		B1EFAFD32B93CF7F00A40330 /* PostGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridViewModel.swift; sourceTree = "<group>"; };
 		B1EFAFD52B93D2D800A40330 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
+		B1EFAFDC2B942FC800A40330 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		B1EFAFDE2B942FD200A40330 /* CommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
+		B1EFAFE02B9433B500A40330 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		B1EFAFE22B9433C400A40330 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				B1EFAF652B923AA600A40330 /* Authentication */,
+				B1EFAFD72B942F8D00A40330 /* Comments */,
 				B1EFAF712B92495B00A40330 /* Components */,
 				B1EFAF642B923AA400A40330 /* Feed */,
 				B1EFAF662B923AB700A40330 /* Profile */,
@@ -410,6 +419,49 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B1EFAFD72B942F8D00A40330 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				B1EFAFDB2B942F9C00A40330 /* Model */,
+				B1EFAFDA2B942F9A00A40330 /* View */,
+				B1EFAFD82B942F9500A40330 /* ViewModel */,
+				B1EFAFD92B942F9800A40330 /* Service */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		B1EFAFD82B942F9500A40330 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B1EFAFE02B9433B500A40330 /* CommentsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B1EFAFD92B942F9800A40330 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B1EFAFDA2B942F9A00A40330 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1EFAFDC2B942FC800A40330 /* CommentsView.swift */,
+				B1EFAFDE2B942FD200A40330 /* CommentsCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1EFAFDB2B942F9C00A40330 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1EFAFE22B9433C400A40330 /* Comment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -511,6 +563,7 @@
 				B1EFAF912B9272C500A40330 /* CurrentUserProfileView.swift in Sources */,
 				B1EFAF952B9278A800A40330 /* PostGridView.swift in Sources */,
 				B1EFAFC32B93B38100A40330 /* EditProfileViewModel.swift in Sources */,
+				B1EFAFE32B9433C400A40330 /* Comment.swift in Sources */,
 				B1EFAF892B926C7A00A40330 /* CreateUsernameView.swift in Sources */,
 				B1EFAFB32B928B4600A40330 /* ContentViewModel.swift in Sources */,
 				B1EFAFBD2B93AEFC00A40330 /* EditProfileView.swift in Sources */,
@@ -525,11 +578,14 @@
 				B1EFAF872B926BE000A40330 /* IGTextFieldModifier.swift in Sources */,
 				B1EFAF8D2B926E4900A40330 /* CompleteSignupView.swift in Sources */,
 				B1EFAF732B92516600A40330 /* UserStatView.swift in Sources */,
+				B1EFAFDD2B942FC800A40330 /* CommentsView.swift in Sources */,
 				B1EFAF772B9258E300A40330 /* FeedView.swift in Sources */,
 				B1EFAFBB2B9299BD00A40330 /* SearchViewModel.swift in Sources */,
 				B1EFAFCA2B93BC9F00A40330 /* CircularProfileImageView.swift in Sources */,
 				B1EFAF6C2B92485300A40330 /* MainTabView.swift in Sources */,
+				B1EFAFE12B9433B500A40330 /* CommentsViewModel.swift in Sources */,
 				B1EFAF8B2B926D9F00A40330 /* CreatePasswordView.swift in Sources */,
+				B1EFAFDF2B942FD200A40330 /* CommentsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
