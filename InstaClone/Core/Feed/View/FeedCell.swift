@@ -10,7 +10,19 @@ import Kingfisher
 
 struct FeedCell: View {
     
-    let post: Post
+    @ObservedObject var viewModel: FeedCellViewModel
+    
+    private var post: Post {
+        return viewModel.post
+    }
+    
+    private var didLike: Bool {
+        return post.didLike ?? false
+    }
+    
+    init(post: Post) {
+        self.viewModel = FeedCellViewModel(post: post)
+    }
     
     var body: some View {
         VStack {
@@ -35,9 +47,11 @@ struct FeedCell: View {
             
             HStack(spacing: 8, content: {
                 Button(action: {
-                    print("like post")
+                    handleLikeTapped()
                 }, label: {
-                    Image(systemName: "heart")
+                    Image(systemName: didLike ? "heart.fill" : "heart")
+                        .imageScale(.large)
+                        .foregroundStyle(didLike ? .red : .black)
                 })
                 
                 Button(action: {
@@ -57,12 +71,14 @@ struct FeedCell: View {
             .padding(.top, 4)
             .foregroundStyle(Color.black)
             
-            Text("\(post.likes) likes")
-                .font(.footnote)
-                .fontWeight(.semibold)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 10)
-                .padding(.top, 1)
+            if post.likes > 0 {
+                Text("\(post.likes) likes")
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 10)
+                    .padding(.top, 1)
+            }
             
             HStack {
                 Text("\(post.user?.username ?? "") ")
@@ -82,8 +98,18 @@ struct FeedCell: View {
                 .foregroundStyle(Color.gray)
         }
     }
+    
+    private func handleLikeTapped() {
+        Task {
+            if didLike {
+                try await viewModel.unlike()
+            } else {
+                try await viewModel.like()
+            }
+        }
+    }
 }
 
 #Preview {
-    FeedCell(post: Post.MOCK_POST[2])
+    FeedCell(post: Post.MOCK_POST[0])
 }

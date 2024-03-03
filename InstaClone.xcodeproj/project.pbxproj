@@ -52,6 +52,7 @@
 		B1EFAFCE2B93CA0800A40330 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFCD2B93CA0800A40330 /* FeedViewModel.swift */; };
 		B1EFAFD02B93CDFD00A40330 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFCF2B93CDFD00A40330 /* PostService.swift */; };
 		B1EFAFD42B93CF7F00A40330 /* PostGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFD32B93CF7F00A40330 /* PostGridViewModel.swift */; };
+		B1EFAFD62B93D2D800A40330 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFD52B93D2D800A40330 /* FeedCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		B1EFAFCD2B93CA0800A40330 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		B1EFAFCF2B93CDFD00A40330 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		B1EFAFD32B93CF7F00A40330 /* PostGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridViewModel.swift; sourceTree = "<group>"; };
+		B1EFAFD52B93D2D800A40330 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				B1EFAFCD2B93CA0800A40330 /* FeedViewModel.swift */,
+				B1EFAFD52B93D2D800A40330 /* FeedCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 			files = (
 				B1EFAFD42B93CF7F00A40330 /* PostGridViewModel.swift in Sources */,
 				B1EFAF7B2B9258FD00A40330 /* FeedCell.swift in Sources */,
+				B1EFAFD62B93D2D800A40330 /* FeedCellViewModel.swift in Sources */,
 				B1EFAF9A2B92814C00A40330 /* UploadPostView.swift in Sources */,
 				B1EFAF702B92492600A40330 /* ProfileView.swift in Sources */,
 				B1EFAF542B923A2400A40330 /* ContentView.swift in Sources */,

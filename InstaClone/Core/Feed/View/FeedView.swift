@@ -13,14 +13,14 @@ struct FeedView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
+            ScrollView(showsIndicators: false, content: {
                 LazyVStack(spacing: 32, content: {
                     ForEach(viewModel.posts) { post in
                         FeedCell(post: post)
                     }
                 })
                 .padding(.top, 8)
-            }
+            })
             .navigationTitle("Feed")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {

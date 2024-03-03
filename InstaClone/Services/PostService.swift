@@ -11,6 +11,7 @@ import Firebase
 struct PostService {
     
     private static let postCollection = Firestore.firestore().collection("posts")
+    private static let userCollection = Firestore.firestore().collection("users")
     
     static func fetchFeedPosts() async throws -> [Post] {
         let snapshot = try await postCollection.order(by: "timestamp", descending: true).getDocuments()
@@ -31,5 +32,38 @@ struct PostService {
         let snapshot = try await postCollection.whereField("ownerUid", isEqualTo: uid).getDocuments()
         let posts = try snapshot.documents.compactMap({ try $0.data(as: Post.self)} )
         return posts.sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() })
+    }
+}
+
+// MARK: - Likes
+
+extension PostService {
+    static func likePost(_ post: Post) async throws {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        // This for Firebase will create a new collection, "post-likes" and updates current post with +1 like
+        // All async calls, don't want to wait for all the other calls to complete. 
+        async let _ = try await postCollection.document(post.id).collection("post-likes").document(uid).setData([:])
+        async let _ = try await postCollection.document(post.id).updateData(["likes":post.likes + 1])
+        async let _ = Firestore.firestore().collection("users").document(uid).collection("user-likes").document(post.id).setData([:])
+    }
+    
+    static func unlikePost(_ post: Post) async throws {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        // This for Firebase will create a new collection, "post-likes" and updates current post with +1 like
+        // All async calls, don't want to wait for all the other calls to complete.
+        // Store the current user's likes into a new collection
+        async let _ = try await postCollection.document(post.id).collection("post-likes").document(uid).delete()
+        async let _ = try await postCollection.document(post.id).updateData(["likes":post.likes - 1])
+        async let _ = Firestore.firestore().collection("users").document(uid).collection("user-likes").document(post.id).delete()
+    }
+    
+    static func checkIfUserLikedPost(_ post: Post) async throws -> Bool {
+        guard let uid = Auth.auth().currentUser?.uid else { return false }
+        
+        // Checks and looks at the Firestore collection has a uid within the user's like
+        let snapshot = try await userCollection.document(uid).collection("user-likes").document(post.id).getDocument()
+        return snapshot.exists
     }
 }
