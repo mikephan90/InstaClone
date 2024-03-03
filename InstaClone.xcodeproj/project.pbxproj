@@ -11,6 +11,7 @@
 		B1D769042B94413E00C8FA8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D769032B94413E00C8FA8E /* Constants.swift */; };
 		B1D769082B94443000C8FA8E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B1D769072B94443000C8FA8E /* .gitignore */; };
 		B1D7690C2B9444B000C8FA8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1D7690B2B9444B000C8FA8E /* GoogleService-Info.plist */; };
+		B1D769132B94ECA100C8FA8E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D769122B94ECA100C8FA8E /* ProfileViewModel.swift */; };
 		B1EFAF522B923A2400A40330 /* InstaCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAF512B923A2400A40330 /* InstaCloneApp.swift */; };
 		B1EFAF542B923A2400A40330 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAF532B923A2400A40330 /* ContentView.swift */; };
 		B1EFAF562B923A2600A40330 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EFAF552B923A2600A40330 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		B1D769032B94413E00C8FA8E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B1D769072B94443000C8FA8E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B1D7690B2B9444B000C8FA8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B1D769122B94ECA100C8FA8E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		B1EFAF4E2B923A2400A40330 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EFAF512B923A2400A40330 /* InstaCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCloneApp.swift; sourceTree = "<group>"; };
 		B1EFAF532B923A2400A40330 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				B1EFAFC22B93B38100A40330 /* EditProfileViewModel.swift */,
+				B1D769122B94ECA100C8FA8E /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				B1EFAF772B9258E300A40330 /* FeedView.swift in Sources */,
 				B1EFAFBB2B9299BD00A40330 /* SearchViewModel.swift in Sources */,
 				B1EFAFCA2B93BC9F00A40330 /* CircularProfileImageView.swift in Sources */,
+				B1D769132B94ECA100C8FA8E /* ProfileViewModel.swift in Sources */,
 				B1EFAF6C2B92485300A40330 /* MainTabView.swift in Sources */,
 				B1EFAFE12B9433B500A40330 /* CommentsViewModel.swift in Sources */,
 				B1EFAF8B2B926D9F00A40330 /* CreatePasswordView.swift in Sources */,

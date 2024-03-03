@@ -16,6 +16,9 @@ struct User: Identifiable, Codable, Hashable {
     var bio: String?
     let email: String
     
+    // Add default here as it is unique to each individual user
+    var isFollowed: Bool? = false
+    
     // Look at the current user if there is one
     var isCurrentUser : Bool {
         guard let currentUid = Auth.auth().currentUser?.uid else { return false }
