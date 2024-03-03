@@ -13,7 +13,6 @@ import FirebaseFirestoreSwift
 class AuthService {
     
     @Published var userSession: FirebaseAuth.User?
-    @Published var currentUser: User?
     
     static let shared = AuthService()
     
@@ -45,24 +44,22 @@ class AuthService {
     
     @MainActor
     func loadUserData() async throws {
-        /// Decoding the data from Firebase
         self.userSession = Auth.auth().currentUser
-        guard let currentUid = userSession?.uid else { return }
-        self.currentUser = try await UserService.fetchUser(withUid: currentUid)
+        try await UserService.shared.fetchCurrentUser()
     }
     
     func signout() {
         try? Auth.auth().signOut()
         self.userSession = nil
-        self.currentUser = nil
+        UserService.shared.currentUser = nil
     }
     
     private func uploadUserData(uid: String, username: String, email: String) async {
         let user = User(id: uid, username: username, email: email)
-        self.currentUser = user
+        UserService.shared.currentUser = user
         
         /// Encode the data to Firebase
         guard let encodedUser = try? Firestore.Encoder().encode(user) else { return } // could potentially fail so need try here
-        try? await Firestore.firestore().collection("users").document(user.id).setData(encodedUser) // location where data is going to go in firebase
+        try? await FirebaseConstants.UsersCollection.document(user.id).setData(encodedUser) // location where data is going to go in firebase
     }
 }

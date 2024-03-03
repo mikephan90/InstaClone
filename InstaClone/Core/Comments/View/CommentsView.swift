@@ -10,9 +10,14 @@ import SwiftUI
 struct CommentsView: View {
     
     @State private var commentText = ""
+    @StateObject var viewModel: CommentsViewModel
     
-    private var user: User {
-        return User.MOCK_USERS[0]
+    private var currentUser: User? {
+        return UserService.shared.currentUser
+    }
+    
+    init(post: Post) {
+        self._viewModel = StateObject(wrappedValue: CommentsViewModel(post: post))
     }
     
     var body: some View {
@@ -26,8 +31,8 @@ struct CommentsView: View {
             
             ScrollView {
                 LazyVStack(spacing: 24, content: {
-                    ForEach(0 ... 15, id: \.self) { comment in
-                        CommentsCell()
+                    ForEach(viewModel.comments) { comment in
+                        CommentsCell(comment: comment)
                     }
                 })
                 .padding(.top)
@@ -36,7 +41,9 @@ struct CommentsView: View {
             Divider()
             
             HStack(spacing: 12, content: {
-                CircularProfileImageView(user: user, size: .xsmall)
+                var commentIsEmpty = commentText == ""
+                
+                CircularProfileImageView(user: currentUser, size: .xsmall)
                 
                 ZStack(alignment: .trailing, content: {
                     //                    TextField("Add a comment for \(owner.userName)", text: $commentText, axis: .vertical)
@@ -48,15 +55,19 @@ struct CommentsView: View {
                             Capsule()
                                 .stroke(Color(.systemGray5), lineWidth: 1.0)
                         }
-                    
+                
                     Button(action: {
-                        
+                        Task {
+                            try await viewModel.uploadComment(commentText: commentText)
+                            commentText = ""
+                        }
                     }, label: {
                         Text("Post")
                             .font(.subheadline)
                             .fontWeight(.semibold)
-                            .foregroundStyle(Color(.systemBlue))
+                            .foregroundStyle(commentIsEmpty ? .gray : Color(.systemBlue))
                     })
+                    .disabled(commentIsEmpty)
                     .padding(.horizontal)
                 })
             })
@@ -66,5 +77,5 @@ struct CommentsView: View {
 }
 
 #Preview {
-    CommentsView()
+    CommentsView(post: Post.MOCK_POST[0])
 }
