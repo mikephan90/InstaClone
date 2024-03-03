@@ -20,6 +20,8 @@
 		B1D769242B950AFC00C8FA8E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D769232B950AFC00C8FA8E /* Notification.swift */; };
 		B1D769262B950B0400C8FA8E /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D769252B950B0400C8FA8E /* NotificationType.swift */; };
 		B1D769282B950CF800C8FA8E /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D769272B950CF800C8FA8E /* NotificationViewModel.swift */; };
+		B1D7692C2B9513C000C8FA8E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7692B2B9513C000C8FA8E /* NotificationService.swift */; };
+		B1D7692F2B951D8100C8FA8E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7692E2B951D8100C8FA8E /* NotificationManager.swift */; };
 		B1EFAF522B923A2400A40330 /* InstaCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAF512B923A2400A40330 /* InstaCloneApp.swift */; };
 		B1EFAF542B923A2400A40330 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAF532B923A2400A40330 /* ContentView.swift */; };
 		B1EFAF562B923A2600A40330 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EFAF552B923A2600A40330 /* Assets.xcassets */; };
@@ -87,6 +89,8 @@
 		B1D769232B950AFC00C8FA8E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		B1D769252B950B0400C8FA8E /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		B1D769272B950CF800C8FA8E /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		B1D7692B2B9513C000C8FA8E /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B1D7692E2B951D8100C8FA8E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B1EFAF4E2B923A2400A40330 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EFAF512B923A2400A40330 /* InstaCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCloneApp.swift; sourceTree = "<group>"; };
 		B1EFAF532B923A2400A40330 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				B1D7691E2B95070100C8FA8E /* Model */,
 				B1D7691D2B9506FF00C8FA8E /* View */,
 				B1D7691C2B9506FE00C8FA8E /* ViewModel */,
+				B1D7692D2B951D7300C8FA8E /* Manager */,
 				B1D7691B2B9506F500C8FA8E /* Services */,
 			);
 			path = Notifications;
@@ -174,6 +179,7 @@
 		B1D7691B2B9506F500C8FA8E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B1D7692B2B9513C000C8FA8E /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -202,6 +208,14 @@
 				B1D769252B950B0400C8FA8E /* NotificationType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B1D7692D2B951D7300C8FA8E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B1D7692E2B951D8100C8FA8E /* NotificationManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		B1EFAF452B923A2400A40330 = {
@@ -641,6 +655,7 @@
 				B1EFAF7B2B9258FD00A40330 /* FeedCell.swift in Sources */,
 				B1EFAFD62B93D2D800A40330 /* FeedCellViewModel.swift in Sources */,
 				B1EFAF9A2B92814C00A40330 /* UploadPostView.swift in Sources */,
+				B1D7692C2B9513C000C8FA8E /* NotificationService.swift in Sources */,
 				B1EFAF702B92492600A40330 /* ProfileView.swift in Sources */,
 				B1EFAF542B923A2400A40330 /* ContentView.swift in Sources */,
 				B1EFAF832B92650D00A40330 /* LoginView.swift in Sources */,
@@ -673,6 +688,7 @@
 				B1EFAFD02B93CDFD00A40330 /* PostService.swift in Sources */,
 				B1EFAF872B926BE000A40330 /* IGTextFieldModifier.swift in Sources */,
 				B1EFAFE52B94350E00A40330 /* CommentsService.swift in Sources */,
+				B1D7692F2B951D8100C8FA8E /* NotificationManager.swift in Sources */,
 				B1D769012B94407A00C8FA8E /* Timestamp.swift in Sources */,
 				B1D769172B94FC9800C8FA8E /* UserListView.swift in Sources */,
 				B1EFAF8D2B926E4900A40330 /* CompleteSignupView.swift in Sources */,

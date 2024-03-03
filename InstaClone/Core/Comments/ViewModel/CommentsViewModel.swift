@@ -18,6 +18,7 @@ class CommentsViewModel: ObservableObject {
     
     init(post: Post) {
         self.post = post
+        // TODO: Apply a DI here for testing
         self.service = CommentsService(postId: post.id)
         
         Task { try await fetchComments() }
@@ -36,6 +37,8 @@ class CommentsViewModel: ObservableObject {
         
         try await service.uploadComment(comment)
         try await fetchComments()
+        
+        NotificationManager.shared.uploadCommentNotification(toUid: post.ownerUid, post: post)
     }
 
     func fetchComments() async throws {

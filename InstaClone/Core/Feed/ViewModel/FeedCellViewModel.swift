@@ -28,7 +28,9 @@ class FeedCellViewModel: ObservableObject {
             let postCopy = post
             post.didLike = true
             post.likes += 1
+            
             try await PostService.likePost(postCopy)
+            NotificationManager.shared.uploadLikeNotification(toUid: post.ownerUid, post: post)
         } catch {
             // If any updates fail, revert change
             post.didLike = false
