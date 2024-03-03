@@ -143,7 +143,6 @@
 		B1EFAF452B923A2400A40330 = {
 			isa = PBXGroup;
 			children = (
-				B1EFAFC22B93B38100A40330 /* EditProfileViewModel.swift */,
 				B1EFAF502B923A2400A40330 /* InstaClone */,
 				B1EFAF4F2B923A2400A40330 /* Products */,
 			);
@@ -299,6 +298,7 @@
 		B1EFAF6D2B92491800A40330 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B1EFAFC22B93B38100A40330 /* EditProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
