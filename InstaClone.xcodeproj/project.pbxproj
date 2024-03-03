@@ -10,6 +10,7 @@
 		B1D769012B94407A00C8FA8E /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D769002B94407A00C8FA8E /* Timestamp.swift */; };
 		B1D769042B94413E00C8FA8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D769032B94413E00C8FA8E /* Constants.swift */; };
 		B1D769082B94443000C8FA8E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B1D769072B94443000C8FA8E /* .gitignore */; };
+		B1D7690C2B9444B000C8FA8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1D7690B2B9444B000C8FA8E /* GoogleService-Info.plist */; };
 		B1EFAF522B923A2400A40330 /* InstaCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAF512B923A2400A40330 /* InstaCloneApp.swift */; };
 		B1EFAF542B923A2400A40330 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAF532B923A2400A40330 /* ContentView.swift */; };
 		B1EFAF562B923A2600A40330 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EFAF552B923A2600A40330 /* Assets.xcassets */; };
@@ -39,7 +40,6 @@
 		B1EFAFA62B92889100A40330 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B1EFAFA52B92889100A40330 /* FirebaseFirestore */; };
 		B1EFAFA82B92889100A40330 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B1EFAFA72B92889100A40330 /* FirebaseFirestoreSwift */; };
 		B1EFAFAA2B92889100A40330 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B1EFAFA92B92889100A40330 /* FirebaseStorage */; };
-		B1EFAFAC2B9288BA00A40330 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1EFAFAB2B9288BA00A40330 /* GoogleService-Info.plist */; };
 		B1EFAFAF2B928A2800A40330 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFAE2B928A2800A40330 /* AuthService.swift */; };
 		B1EFAFB32B928B4600A40330 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFB22B928B4600A40330 /* ContentViewModel.swift */; };
 		B1EFAFB52B928CBE00A40330 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAFB42B928CBE00A40330 /* RegistrationViewModel.swift */; };
@@ -68,6 +68,7 @@
 		B1D769002B94407A00C8FA8E /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
 		B1D769032B94413E00C8FA8E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B1D769072B94443000C8FA8E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B1D7690B2B9444B000C8FA8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1EFAF4E2B923A2400A40330 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EFAF512B923A2400A40330 /* InstaCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCloneApp.swift; sourceTree = "<group>"; };
 		B1EFAF532B923A2400A40330 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		B1EFAF962B927A3300A40330 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		B1EFAF992B92814C00A40330 /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
 		B1EFAF9C2B92847400A40330 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
-		B1EFAFAB2B9288BA00A40330 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1EFAFAE2B928A2800A40330 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B1EFAFB22B928B4600A40330 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		B1EFAFB42B928CBE00A40330 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 		B1EFAF502B923A2400A40330 /* InstaClone */ = {
 			isa = PBXGroup;
 			children = (
-				B1EFAFAB2B9288BA00A40330 /* GoogleService-Info.plist */,
+				B1D7690B2B9444B000C8FA8E /* GoogleService-Info.plist */,
 				B1EFAF632B923A6E00A40330 /* App */,
 				B1EFAF622B923A6C00A40330 /* Core */,
 				B1EFAF612B923A6B00A40330 /* Extension */,
@@ -557,9 +557,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1D769082B94443000C8FA8E /* .gitignore in Resources */,
+				B1D7690C2B9444B000C8FA8E /* GoogleService-Info.plist in Resources */,
 				B1EFAF592B923A2600A40330 /* Preview Assets.xcassets in Resources */,
 				B1EFAF562B923A2600A40330 /* Assets.xcassets in Resources */,
-				B1EFAFAC2B9288BA00A40330 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
