@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B1D769012B94407A00C8FA8E /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D769002B94407A00C8FA8E /* Timestamp.swift */; };
 		B1D769042B94413E00C8FA8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D769032B94413E00C8FA8E /* Constants.swift */; };
+		B1D769082B94443000C8FA8E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B1D769072B94443000C8FA8E /* .gitignore */; };
 		B1EFAF522B923A2400A40330 /* InstaCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAF512B923A2400A40330 /* InstaCloneApp.swift */; };
 		B1EFAF542B923A2400A40330 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAF532B923A2400A40330 /* ContentView.swift */; };
 		B1EFAF562B923A2600A40330 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EFAF552B923A2600A40330 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		B1D769002B94407A00C8FA8E /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
 		B1D769032B94413E00C8FA8E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B1D769072B94443000C8FA8E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B1EFAF4E2B923A2400A40330 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EFAF512B923A2400A40330 /* InstaCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCloneApp.swift; sourceTree = "<group>"; };
 		B1EFAF532B923A2400A40330 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				B1D769022B94412B00C8FA8E /* Utils */,
 				B1EFAF552B923A2600A40330 /* Assets.xcassets */,
 				B1EFAF572B923A2600A40330 /* Preview Content */,
+				B1D769072B94443000C8FA8E /* .gitignore */,
 			);
 			path = InstaClone;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D769082B94443000C8FA8E /* .gitignore in Resources */,
 				B1EFAF592B923A2600A40330 /* Preview Assets.xcassets in Resources */,
 				B1EFAF562B923A2600A40330 /* Assets.xcassets in Resources */,
 				B1EFAFAC2B9288BA00A40330 /* GoogleService-Info.plist in Resources */,
