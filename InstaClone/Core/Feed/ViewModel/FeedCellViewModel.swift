@@ -45,6 +45,8 @@ class FeedCellViewModel: ObservableObject {
             post.didLike = false
             post.likes -= 1
             try await PostService.likePost(postCopy)
+            
+            try await NotificationManager.shared.deleteLikeNotification(notificationOwnerUid: post.ownerUid, post: post)
         } catch {
             // If any updates fail, revert change
             post.didLike = true

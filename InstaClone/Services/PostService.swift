@@ -29,6 +29,10 @@ struct PostService {
         let posts = try snapshot.documents.compactMap({ try $0.data(as: Post.self)} )
         return posts.sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() })
     }
+    
+    static func fetchPost(_ postId: String) async throws -> Post {
+        return try await FirebaseConstants.PostsCollection.document(postId).getDocument(as: Post.self)
+    }
 }
 
 // MARK: - Likes
