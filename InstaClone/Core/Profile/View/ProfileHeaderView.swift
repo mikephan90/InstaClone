@@ -72,10 +72,10 @@ struct ProfileHeaderView: View {
                 
                 HStack(spacing: 8, content: {
                     // TODO: Add post nav link -> create feed view using the USER
-                    NavigationLink(value:
-                                    UserListConfig.followers(uid: user.id)) {
+                    NavigationLink {
+                        UserPostsFeedView(user: user)
+                    } label: {
                         UserStatView(value: stats.postsCount, title: "Posts")
-                                       
                     }
                     .disabled(stats.postsCount == 0)
                     

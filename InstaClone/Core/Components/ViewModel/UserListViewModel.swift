@@ -13,7 +13,6 @@ class UserListViewModel: ObservableObject {
     @Published var users = [User]()
     
     init() {
-        print("DEBUG: Init UserListViewModel")
     }
     
     func fetchUsers(forConfig config: UserListConfig) async  {
