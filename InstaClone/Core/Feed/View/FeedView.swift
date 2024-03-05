@@ -9,36 +9,48 @@ import SwiftUI
 
 struct FeedView: View {
     
+    @State private var scrollValue = false
     @StateObject var viewModel = FeedViewModel()
     
     var body: some View {
         NavigationStack {
-            ScrollView(showsIndicators: false, content: {
-                LazyVStack(spacing: 32, content: {
-                    ForEach(viewModel.posts) { post in
-                        FeedCell(post: post)
+            ScrollViewReader { scrollViewProxy in
+                ScrollView(showsIndicators: false, content: {
+                    LazyVStack(spacing: 32, content: {
+                        ForEach(viewModel.posts) { post in
+                            FeedCell(post: post)
+                        }
+                    })
+                    .id("feedContent")
+                    .padding(.top, 8)
+                })
+                .onChange(of: scrollValue, initial: true, { _,_ in
+                    withAnimation {
+                        scrollViewProxy.scrollTo("feedContent", anchor: .top)
                     }
                 })
-                .padding(.top, 8)
-            })
-            .refreshable {
-                Task { try await viewModel.fetchPosts() }
+                .refreshable {
+                    Task { try await viewModel.fetchAllNonCurrentUserPosts() }
+                }
+                .toolbar(content: {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            scrollValue.toggle()
+                        } label: {
+                            Image("instagram-logo-text")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 80, height: 28)
+                        }
+                        
+                    }
+                    
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Image(systemName: "paperplane")
+                            .imageScale(.large)
+                    }
+                })
             }
-            .navigationTitle("Feed")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar(content: {
-                ToolbarItem(placement: .topBarLeading) {
-                    Image("instagram-logo-text")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 80, height: 28)
-                }
-                
-                ToolbarItem(placement: .topBarTrailing) {
-                    Image(systemName: "paperplane")
-                        .imageScale(.large)
-                }
-            })
         }
     }
 }

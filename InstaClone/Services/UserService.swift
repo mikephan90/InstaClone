@@ -30,8 +30,9 @@ class UserService {
     }
     
     static func fetchAllUsers() async throws -> [User] {
+        guard let uid = Auth.auth().currentUser?.uid else { return [] }
         let snapshot = try await FirebaseConstants.UsersCollection.getDocuments()
-        return snapshot.documents.compactMap({ try? $0.data(as: User.self) })
+        return snapshot.documents.compactMap({ try? $0.data(as: User.self) }).filter { $0.id != uid }
     }
     
     static func fetchUsers(forConfig config: UserListConfig) async throws -> [User] {

@@ -33,14 +33,24 @@ struct FeedCell: View {
         VStack {
             HStack {
                 if let user = post.user {
-                    CircularProfileImageView(user: user, size: .xsmall)
-                    
-                    Text(user.username)
-                        .font(.footnote)
-                        .fontWeight(.semibold)
+                    NavigationLink {
+                        ProfileView(user: user)
+                    } label: {
+                        CircularProfileImageView(user: user, size: .xsmall)
+                        Text(user.username)
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                    }
                 }
                 
                 Spacer()
+                
+                Button(action: {
+                    print("more options selected")
+                }) {
+                    Image(systemName: "ellipsis")
+                        .padding(.trailing)
+                }
             }
             .padding(.leading, 8)
             
