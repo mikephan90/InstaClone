@@ -25,7 +25,6 @@ struct UserStatView: View {
                 .font(.footnote)
                 .fontWeight(.semibold)
         }
-        .opacity(value == 0 ? 0.5 : 1.0)
         .frame(width: 88)
     }
 }

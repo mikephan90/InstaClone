@@ -71,7 +71,13 @@ struct ProfileHeaderView: View {
                 Spacer()
                 
                 HStack(spacing: 8, content: {
-                    UserStatView(value: stats.postsCount, title: "Posts")
+                    // TODO: Add post nav link -> create feed view using the USER
+                    NavigationLink(value:
+                                    UserListConfig.followers(uid: user.id)) {
+                        UserStatView(value: stats.postsCount, title: "Posts")
+                                       
+                    }
+                    .disabled(stats.postsCount == 0)
                     
                     // This NavLink is for enum cases/data type
                     NavigationLink(value: UserListConfig.followers(uid: user.id)) {
