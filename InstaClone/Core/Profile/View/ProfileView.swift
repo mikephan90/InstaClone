@@ -12,14 +12,14 @@ struct ProfileView: View {
     let user: User
     
     var body: some View {
-        ScrollView {
-            ProfileHeaderView(user: user)
-            
-            PostGridView(user: user)
+            ScrollView {
+                ProfileHeaderView(user: user)
+                
+                PostGridView(user: user)
+            }
+            .navigationTitle("\(user.username)")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle("Profile")
-        .navigationBarTitleDisplayMode(.inline)
-    }
 }
 
 #Preview {

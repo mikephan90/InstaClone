@@ -9,7 +9,7 @@ import Foundation
 
 class UserPostsFeedViewModel: ObservableObject {
     
-    private let user: User
+    let user: User
     @Published var posts = [Post]()
     
     init(user: User) {
@@ -17,6 +17,7 @@ class UserPostsFeedViewModel: ObservableObject {
         Task { try await fetchUsersPosts(uid: user.id) }
     }
     
+    @MainActor
     func fetchUsersPosts(uid: String) async throws {
         self.posts = try await PostService.fetchUserPosts(uid: uid)
     }

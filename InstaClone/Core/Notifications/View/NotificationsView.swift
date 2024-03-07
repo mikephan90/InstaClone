@@ -10,6 +10,7 @@ import SwiftUI
 struct NotificationsView: View {
     
     @StateObject var viewModel = NotificationViewModel(service: NotificationService())
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationStack {
@@ -30,8 +31,21 @@ struct NotificationsView: View {
             .navigationDestination(for: Post.self, destination: { post in
                 FeedCell(post: post)
             })
-            .navigationTitle("Notifications")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        HStack(spacing: 10, content: {
+                            Image(systemName: "chevron.left")
+                            Text("Notifications")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                        })
+                    }
+                }
+            }
         }
     }
 }

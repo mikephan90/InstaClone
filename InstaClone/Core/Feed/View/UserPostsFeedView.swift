@@ -24,7 +24,7 @@ struct UserPostsFeedView: View {
             })
             .padding(.top, 8)
         })
-        .navigationTitle("username's Posts")
+        .navigationTitle("\(viewModel.user.username)'s posts")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

@@ -33,14 +33,10 @@ struct FeedCell: View {
         VStack {
             HStack {
                 if let user = post.user {
-                    NavigationLink {
-                        ProfileView(user: user)
-                    } label: {
-                        CircularProfileImageView(user: user, size: .xsmall)
-                        Text(user.username)
-                            .font(.footnote)
-                            .fontWeight(.semibold)
-                    }
+                    CircularProfileImageView(user: user, size: .xsmall)
+                    Text(user.username)
+                        .font(.footnote)
+                        .fontWeight(.semibold)
                 }
                 
                 Spacer()
@@ -131,10 +127,15 @@ struct FeedCell: View {
                 .padding(.leading, 10)
                 .padding(.top, 1)
                 .foregroundStyle(.gray)
+            
+            Spacer()
         }
         .sheet(isPresented: $showComments, content: {
             CommentsView(post: post)
                 .presentationDragIndicator(.visible)
+                .onDisappear {
+                    showComments = false
+                }
         })
     }
     

@@ -43,12 +43,12 @@ struct MainTabView: View {
                 }
                 .tag(2)
             
-            NotificationsView()
+            Text("Reels View")
                 .onAppear{
                     selectedTab = 3
                 }
                 .tabItem {
-                    Image(systemName: "heart")
+                    Image(systemName: "play.rectangle")
                 }
                 .tag(3)
             

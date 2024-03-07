@@ -13,7 +13,6 @@ struct ProfileHeaderView: View {
     @ObservedObject var viewModel: ProfileViewModel
     @State private var showEditProfile = false
     
-    
     // TODO: Move to viewModel
     private var user: User {
         return viewModel.user

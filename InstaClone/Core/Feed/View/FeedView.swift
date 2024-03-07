@@ -13,7 +13,7 @@ struct FeedView: View {
     @StateObject var viewModel = FeedViewModel()
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollViewReader { scrollViewProxy in
                 ScrollView(showsIndicators: false, content: {
                     LazyVStack(spacing: 32, content: {
@@ -24,7 +24,7 @@ struct FeedView: View {
                     .id("feedContent")
                     .padding(.top, 8)
                 })
-                .onChange(of: scrollValue, initial: true, { _,_ in
+                .onChange(of: scrollValue, initial: false, { _,_ in
                     withAnimation {
                         scrollViewProxy.scrollTo("feedContent", anchor: .top)
                     }
@@ -43,6 +43,15 @@ struct FeedView: View {
                                 .frame(width: 80, height: 28)
                         }
                         
+                    }
+                    
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink(destination: NotificationsView().navigationBarHidden(true)) {
+                            Image(systemName: "heart")
+                                .imageScale(.large)
+                                .padding(.trailing)
+                        }
+                       
                     }
                     
                     ToolbarItem(placement: .topBarTrailing) {
