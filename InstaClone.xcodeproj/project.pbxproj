@@ -222,6 +222,29 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		B1D769342B993C8400C8FA8E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B1D769352B993C8E00C8FA8E /* View */,
+				B1D769362B993C9200C8FA8E /* ViewModel */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B1D769352B993C8E00C8FA8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1D769362B993C9200C8FA8E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B1EFAF452B923A2400A40330 = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +326,7 @@
 				B1EFAF662B923AB700A40330 /* Profile */,
 				B1EFAF672B923AC100A40330 /* Root */,
 				B1EFAF682B923ACB00A40330 /* Search */,
+				B1D769342B993C8400C8FA8E /* Settings */,
 				B1EFAF6A2B923ADD00A40330 /* TabBar */,
 				B1EFAF692B923AD800A40330 /* UploadPost */,
 			);
